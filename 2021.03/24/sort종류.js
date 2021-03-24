@@ -53,7 +53,7 @@ function BubbleSort(arr) {
 // 3. 선택정렬
 // 정렬되지 않은 데이터들에 대해 가장 작은 데이터를 찾아 가장 앞의 데이터와 교환
 function SelectionSort(arr) {
-  var len = arr.length;
+  var length = arr.length;
   var min;
   for (var outer = 0; outer < length - 1; ++outer) {
     min = outer;
