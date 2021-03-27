@@ -7,11 +7,11 @@
 5. 삽입정렬 
 */
 
-var AA = [234, 45634, 23, 41, 2345, 34, 23, 1, 4, 3, 6, 234, 4536, 55, 234, 23, 456, 45, 234, 1, 856, 9, 67, 56, 7];
+let AA = [234, 45634, 23, 41, 2345, 34, 23, 1, 4, 3, 6, 234, 4536, 55, 234, 23, 456, 45, 234, 1, 856, 9, 67, 56, 7];
 
 // 스왑 헬퍼 => 배열의 위치를 바꾼다.
 function swap(arr, index1, index2) {
-  var temp = arr[index1];
+  let temp = arr[index1];
   arr[index1] = arr[index2];
   arr[index2] = temp;
 }
@@ -22,11 +22,11 @@ function QuickSort(arr) {
   if (arr.length == 0) {
     return [];
   }
-  var middle = arr[0];
-  var len = arr.length;
-  var left = [],
+  let middle = arr[0];
+  let len = arr.length;
+  let left = [],
     right = [];
-  for (var i = 1; i < len; ++i) {
+  for (let i = 1; i < len; ++i) {
     if (arr[i] < middle) {
       left.push(arr[i]);
     } else {
@@ -39,9 +39,9 @@ function QuickSort(arr) {
 // 2. 버블정렬
 // 서로 이웃한 데이터들을 비교하며 가장 큰 데이터를 가장 뒤로 보내며 정렬
 function BubbleSort(arr) {
-  var len = arr.length;
-  for (var outer = len; outer > 1; --outer) {
-    for (var inner = 0; inner < outer; ++inner) {
+  let len = arr.length;
+  for (let outer = len; outer > 1; --outer) {
+    for (let inner = 0; inner < outer; ++inner) {
       if (arr[inner] > arr[inner + 1]) {
         swap(arr, inner, inner + 1);
       }
@@ -53,11 +53,11 @@ function BubbleSort(arr) {
 // 3. 선택정렬
 // 정렬되지 않은 데이터들에 대해 가장 작은 데이터를 찾아 가장 앞의 데이터와 교환
 function SelectionSort(arr) {
-  var length = arr.length;
-  var min;
-  for (var outer = 0; outer < length - 1; ++outer) {
+  let length = arr.length;
+  let min;
+  for (let outer = 0; outer < length - 1; ++outer) {
     min = outer;
-    for (var inner = outer + 1; inner < length; ++inner) {
+    for (let inner = outer + 1; inner < length; ++inner) {
       if (arr[inner] < arr[min]) {
         min = inner;
       }
@@ -70,15 +70,15 @@ function SelectionSort(arr) {
 // 4. 합병정렬
 // 퀵정렬과 마찬가지로 분할 정복 알고리즘
 function MergeSort(arr) {
-  var len = arr.length;
+  let len = arr.length;
   if (len == 1) {
     return arr;
   }
-  var middle = Math.floor(len / 2);
-  var left = arr.slice(0, middle);
-  var right = arr.slice(middle, len);
+  let middle = Math.floor(len / 2);
+  let left = arr.slice(0, middle);
+  let right = arr.slice(middle, len);
   function merge(left, right) {
-    var result = [];
+    let result = [];
     while (left.length && right.length) {
       if (left[0] <= right[0]) {
         result.push(left.shift());
@@ -100,9 +100,9 @@ function MergeSort(arr) {
 // 5. 삽입정렬
 // 아직 정렬되지 않은 임의의 데이터를 이미 정렬된 부분의 적절한 위치에 삽입해 가며 정렬
 function InsertionSort(arr) {
-  var len = arr.length;
-  var temp, inner;
-  for (var outer = 1; outer < len; ++outer) {
+  let len = arr.length;
+  let temp, inner;
+  for (let outer = 1; outer < len; ++outer) {
     temp = arr[outer];
     inner = outer;
     while (inner > 0 && arr[inner - 1] >= temp) {
